@@ -21,9 +21,9 @@ install: npm install
 jobs:
   include:
     - stage: test
-      script: ./test 1
+      script: npm test
     - # stage name not required, will continue to use `test`
-      script: ./test 2
+      script: npm test
     - stage: deploy
       script: ./deploy
 # deploy:
