@@ -11,15 +11,23 @@ dist: xenial
 install: npm install
 # install: skip
 
-script:
-  - npm test
-  - npm run build
+# script:
+#   - npm test
+#   - npm run build
 
-deploy:
-  provider: pages
-  skip-cleanup: true
+# deploy:
+#   skip-cleanup: true
+
+jobs:
+  include:
+    - stage: test
+      script: ./test 1
+    - # stage name not required, will continue to use `test`
+      script: ./test 2
+    - stage: deploy
+      script: ./deploy
 # deploy:
 #   provider: pages:git
 #   token: <encrypted token>
 #   edge: true
-# https://config.travis-ci.com/explore
+
