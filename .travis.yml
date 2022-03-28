@@ -15,12 +15,11 @@ script:
   - npm test
   - npm run build
 
-# deploy:
-#   provider: pages
-#   strategy: git
-
 deploy:
-  provider: pages:git
-  token: <encrypted token>
-  edge: true
+  provider: pages
+  skip-cleanup: true
+# deploy:
+#   provider: pages:git
+#   token: <encrypted token>
+#   edge: true
 # https://config.travis-ci.com/explore
