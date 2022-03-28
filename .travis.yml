@@ -23,7 +23,7 @@ jobs:
     - stage: test
       script: npm test
     - # stage name not required, will continue to use `test`
-      script: npm test
+      script: npm run build
     - stage: deploy
       script: ./deploy
 # deploy:
