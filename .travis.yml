@@ -33,13 +33,11 @@ install: npm install
 
 jobs:
   include:
-    - script: echo "Running unit tests (1)"
+    - stage: Test 1
+      script: echo "Running unit tests (1)"
+    - stage: Test 2
     - script: echo "Running unit tests (2)"
-    - stage: GitHub Release
+    - stage: Deploy
       script: skip
       deploy:
-        provider: releases
-        api_key: '$GITHUB_OAUTH_TOKEN'
         skip_cleanup: true
-        on:
-          tags: true
