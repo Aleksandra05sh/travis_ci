@@ -1,3 +1,21 @@
 language: node_js
 node_js:
   - 16
+os:
+  - linux
+  - osx
+  - windows
+
+dist: xenial
+
+install: npm install
+# install: skip
+
+script:
+  - npm test
+  - npm run build
+
+deploy:
+  provider: pages
+  strategy: git
+# https://config.travis-ci.com/explore
